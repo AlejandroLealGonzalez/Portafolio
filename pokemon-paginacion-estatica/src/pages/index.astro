@@ -8,7 +8,6 @@ import PokemonCard from "../components/pokemons/PokemonCard.astro";
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon");
 const data = (await resp.json()) as PokemonListResponse;
 
-console.log(data);
 ---
 
 <MainLayout title="Home">
@@ -20,7 +19,7 @@ console.log(data);
   >
     {data.results.map((pokemon) => (
       <div class="bg-slate-900 p-4 rounded-md">
-		<PokemonCard name={pokemon.name} url={pokemon.url}/>
+		    <PokemonCard name={pokemon.name} url={pokemon.url}/>
       </div>
     ))}
   </section>
